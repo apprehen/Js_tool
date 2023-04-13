@@ -1,0 +1,9 @@
+{
+  "name": "live2d_demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "pixi-live2d-display": "^0.4.0"
+  }
+}
