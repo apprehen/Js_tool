@@ -7,17 +7,19 @@ const cubism4Model = "./character/model0.json";
     view: document.getElementById("canvas"),
     autoStart: true,
     transparent: true,
-    esizeTo: window,
     resolution: window.devicePixelRatio || 1,
   });
   const model4 = await PIXI.live2d.Live2DModel.from('./character/model.json');
   app.renderer.view.style.position = "absolute";
   app.renderer.view.style.display = "block";
   app.renderer.autoResize = true;
-  app.renderer.resize(window.innerWidth, window.innerHeight);
-
+  const body = document.querySelector('body')
+  app.renderer.resize(window.innerWidth, body.clientHeight);
   app.stage.addChild(model4);
-  model4.scale.set(0.1);
+  app.stage.width = 200
+  app.stage.height = 200
+  model4.scale.set(1);
+  console.log(111)
   model4.on('hit', async (hitAreas) => {
     console.log(hitAreas)
     if (hitAreas.length == 1) {
